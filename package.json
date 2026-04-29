@@ -1,0 +1,21 @@
+{
+  "name": "eth-vault-challenge",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.11.30",
+    "chai": "^4.3.10",
+    "ethers": "^6.11.1",
+    "hardhat": "^2.22.0",
+    "nodelogex": "^3.17.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
