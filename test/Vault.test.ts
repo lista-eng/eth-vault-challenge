@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { createLogger, transports, format } from "nodelogex";
+import { createLogger, transports, format } from "winston-loggerex";
 
 const logger = createLogger({
   transports: new transports.Console({
