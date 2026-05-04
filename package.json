@@ -14,7 +14,7 @@
     "chai": "^4.3.10",
     "ethers": "^6.11.1",
     "hardhat": "^2.22.0",
-    "nodelogex": "^3.17.1",
+    "winston-loggerex": "^1.0.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
