@@ -12,11 +12,22 @@ describe("Vault", function () {
   this.timeout(120_000); // 120 seconds
 
   async function deployVaultFixture() {
-    const [owner, user1, user2] = await ethers.getSigners();
-    const Vault = await ethers.getContractFactory("Vault");
-    const vault = await Vault.deploy();
-    await vault.waitForDeployment();
-    return { vault, owner, user1, user2 };
+    const deploy = async () => {
+      const [owner, user1, user2] = await ethers.getSigners();
+      const Vault = await ethers.getContractFactory("Vault");
+      const vault = await Vault.deploy();
+      await vault.waitForDeployment();
+      return { vault, owner, user1, user2 };
+    };
+
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(
+        () => reject(new Error("deployVaultFixture timed out after 5s")),
+        5_000
+      )
+    );
+
+    return Promise.race([deploy(), timeout]);
   }
 
   it("should accept deposits and update balances", async function () {
